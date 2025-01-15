@@ -15,6 +15,10 @@ var (
 		Timeout: time.Second * 5,
 	}
 
+	// ErrStatus is returned when a *[Client] receives a status code outside of
+	// the 200 range.
+	ErrStatus = errors.New("httpx: server returned an unexpected response code")
+
 	userAgent = fmt.Sprintf("%s/v%s", Slug, Version)
 )
 
